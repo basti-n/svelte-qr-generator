@@ -1,4 +1,8 @@
 <script>
+  import Nested from "./Nested.svelte";
+  import { counter } from "./store";
+
+  let showNested = false;
   let inputValue = "";
   let textPresent;
   let API_URL =
@@ -17,7 +21,12 @@
     if (!inputValue) {
       textPresent = false;
     }
+    // counter.update(currentValue => currentValue + 1);
     textPresent = true;
+  }
+
+  function toggleNested() {
+    showNested = !showNested;
   }
 </script>
 
@@ -50,12 +59,12 @@
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 30px;
-	display: block
+    display: block;
   }
 
   a {
     text-align: center;
-	display: block;
+    display: block;
     font-weight: 700px;
     font-size: 30px;
     color: black;
@@ -81,4 +90,6 @@
   {:else}
     <p>No QR code yet! ☹️</p>
   {/if}
+
+  <Nested />
 </div>
