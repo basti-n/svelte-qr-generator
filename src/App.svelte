@@ -21,7 +21,7 @@
     if (!inputValue) {
       textPresent = false;
     }
-    // counter.update(currentValue => currentValue + 1);
+    counter.update(currentValue => currentValue + 1);
     textPresent = true;
   }
 
